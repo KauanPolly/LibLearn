@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LibLearn</title>
+        <link rel="icon" type="image/png" href="images/img_libras.png"> <!-- Favicon adicionado -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+<body>
+    <div id="sidebar">
+        <button id="closeBtn" onclick="toggleSidebar()"><i class="fas fa-times"></i>Fechar Menu</button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="train">
+                <a href="#" onclick="toggleTrain()">Treinar</a>
+            </li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </div>
+    <button id="openBtn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">LibLearn</div>
+            </div>
+            <a href="index.html">
+                <button class="training-button">Treinamento Livre</button>
+              </a>
+        </div>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Aprenda Libras de forma fácil e acessível</h1>
+                <p>Desenvolva suas habilidades na Língua Brasileira de Sinais com nossos cursos especializados.</p>
+            </div>
+        </section>
+
+        <!-- Seção sobre Libras com layout consistente -->
+        <section id="about-libras" class="about-libras-section">
+            <div class="container">
+                <h2>O que é Libras?</h2>
+                <p>Libras (Língua Brasileira de Sinais) é a forma de comunicação usada pela comunidade surda no Brasil. Assim como qualquer outra língua, Libras possui estrutura própria, com regras gramaticais e vocabulário, permitindo uma comunicação completa e eficaz.</p>
+                <p>A comunicação em Libras é feita por meio de sinais visuais, utilizando gestos com as mãos, expressões faciais e movimentos corporais. É uma língua visual-espacial, diferente do português que é uma língua oral-auditiva.</p>
+                
+                <h3>Como funciona Libras?</h3>
+                <p>Os sinais em Libras são organizados de acordo com a posição das mãos, o movimento e a expressão facial. Cada gesto representa uma palavra, letra ou conceito, e é utilizado para criar frases e conversas completas.</p>
+                
+                <div class="courses">
+                    <div class="course-card">
+                        <center><img src="images/alfabeto_libras.png" alt="Alfabeto em Libras"></center>
+                        <center><p>Alfabeto em Libras</p></center>
+                    </div>
+                    <div class="course-card">
+                        <center><img src="images/comunicacao_libras.png" alt="Comunicação em Libras"></center>
+                        <center><p>Comunicação através de sinais</p></center>
+                    </div>
+                    <div class="course-card">
+                        <center><img src="images/frases_libras.png" alt="Frases em Libras"></center>
+                        <center><p>Frases simples em Libras</p></center>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma plataforma dedicada ao ensino da Língua Brasileira de Sinais, oferecendo cursos de alta qualidade para ajudar você a se comunicar melhor com a comunidade surda.</p>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contato</h2>
+                <form>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Plataforma de Libras. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <script src="js/script.js"></script>
+</body> <!-- Fim do corpo da página -->
+</html>

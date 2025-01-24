@@ -1,0 +1,376 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Estilo do menu lateral */
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000; /* Menu sobreposto */
+    top: 0;
+    left: 0;
+    background-color: #007BFF;
+    overflow-x: hidden;
+    transition: width 0.5s ease; /* Transição suave na largura */
+    padding-top: 60px;
+    opacity: 0; /* Inicialmente invisível */
+    transition: width 0.5s ease, opacity 0.5s ease; /* Suavizando a abertura */
+}
+
+/* Animação de fade-in para o conteúdo do menu */
+#sidebar.open {
+    width: 250px; /* Largura do menu quando aberto */
+    opacity: 1; /* Tornar o menu visível quando aberto */
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 8px;
+    text-align: center;
+    margin: 5px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transição suave para os itens do menu */
+}
+
+/* Itens visíveis quando o menu é aberto */
+#sidebar.open ul li {
+    opacity: 1;
+    transition-delay: 0.3s; /* Atraso para suavizar a entrada */
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.train-menu, .tools-menu {
+    display: none;
+    padding-left: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.train-menu li a, .tools-menu li a {
+    font-size: 1em;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Botões de abrir e fechar */
+#openBtn, #closeBtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2000;
+    transition: transform 0.3s ease; /* Animação suave ao clicar */
+}
+
+#openBtn:hover, #closeBtn:hover {
+    transform: scale(1.1); /* Leve aumento ao passar o mouse */
+}
+
+#openBtn {
+    left: 20px;
+    display: center;
+}
+
+#closeBtn {
+    left: 20px;
+    display: none; /* Inicialmente oculto */
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.training-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero {
+    background: url('../images/maos.png') no-repeat center center/cover;
+    color: white;
+    padding: 8em 1em;
+    text-align: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-shadow: -1px -1px 0 #007BFF, 1px -1px 0 #007BFF, -1px 1px 0 #007BFF, 1px 1px 0 #007BFF; /* Contorno azul */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-shadow: -1px -1px 0 #007BFF, 1px -1px 0 #007BFF, -1px 1px 0 #007BFF, 1px 1px 0 #007BFF; /* Contorno azul */
+}
+
+.hero .btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.courses-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.courses-section h2 {
+    margin-bottom: 1em;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 1em;
+    padding: 1em;
+    width: 200px; /* Reduzindo a largura do card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    max-width: 100%;
+    height: 150px; /* Ajustando a altura da imagem */
+    object-fit: cover; /* Mantendo a proporção da imagem */
+    border-radius: 8px;
+}
+
+.course-card h3 {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.course-card p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.rating {
+    display: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.rating span {
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+.stars {
+    color: #f4c150; /* Cor das estrelas */
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.about-section, .contact-section {
+    padding: 2em 1em;
+    background-color: #f0f0f0;
+}
+
+.about-section .container, .contact-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h2, .contact-section h2 {
+    margin-bottom: 1em;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-section form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.contact-section form input, .contact-section form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-section form .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+/* Estilo para a seção "O que é Libras?" */
+.about-libras-section {
+    padding: 2em 1em; /* Mesmo espaçamento da seção Sobre Nós */
+    background-color: #f0f0f0; /* Mesmo fundo da seção Sobre Nós */
+    text-align: center; /* Centraliza o texto */
+}
+
+.about-libras-section .container {
+    max-width: 1200px; /* Mesma largura máxima da seção Sobre Nós */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-libras-section h2 {
+    font-size: 2em; /* Mesmo tamanho da seção Sobre Nós */
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.about-libras-section p {
+    font-size: 1em; /* Tamanho de fonte idêntico */
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza os parágrafos */
+}
+
+.about-libras-section .courses {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem linha */
+}
+
+.about-libras-section .course-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.about-libras-section .course-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.about-libras-section .course-card p {
+    font-size: 0.9em;
+    color: #333;
+}
