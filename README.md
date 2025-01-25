@@ -94,7 +94,10 @@ Este projeto é dedicado a todas as pessoas que contribuíram para a minha forma
 
 Att: Kauan Pollicarpo Pereira
 
-Autores: [Dani Augusto Nascimento Filippini, Jairo Medeiros Mendes e Kauan Pollicarpo Pereira  ]Orientador: [Ronaldo Dametto]Instituição: [FIB - Faculdades Integradas de Bauru]Data: [2024]
+Autores: [Dani Augusto Nascimento Filippini, Jairo Medeiros Mendes e Kauan Pollicarpo Pereira  ]
+Orientador: [Ronaldo Dametto]
+Instituição: [FIB - Faculdades Integradas de Bauru]
+Data: [2024]
 
 Nota: Este README descreve de forma geral o projeto e pode ser adaptado conforme o desenvolvimento ou novas especificações. Caso você tenha interesse no tema ou sugestões de melhorias, sinta-se à vontade para colaborar!
 
